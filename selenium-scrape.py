@@ -45,24 +45,7 @@ baseUrl = "https://www.murrayscheese.com"
 # "https://www.murrayscheese.com/lp/cheese/cave-aged",
 
 
-urls = [
-    "https://www.murrayscheese.com/lp/cheese/brie-and-creamy",
-    "https://www.murrayscheese.com/lp/cheese/alpine-and-gruyere",
-    "https://www.murrayscheese.com/lp/cheese/blue",
-    "https://www.murrayscheese.com/lp/cheese/cheddar",
-    "https://www.murrayscheese.com/lp/cheese/goats-and-chevre",
-    "https://www.murrayscheese.com/lp/cheese/gouda",
-    "https://www.murrayscheese.com/lp/cheese/grating-and-parmigiano-reggiano",
-    "https://www.murrayscheese.com/lp/cheese/grilling-and-melting",
-    "https://www.murrayscheese.com/lp/cheese/manchego-pecorino-and-sheep",
-    "https://www.murrayscheese.com/lp/cheese/mozzarella-and-fresh"
-    "https://www.murrayscheese.com/lp/cheese/natural-rind-and-tomme",
-    "https://www.murrayscheese.com/lp/cheese/shredded-and-grated",
-    "https://www.murrayscheese.com/lp/cheese/smoked-and-flavored",
-    "https://www.murrayscheese.com/lp/cheese/stinky-and-washed-rind",
-    "https://www.murrayscheese.com/lp/cheese/truffle",
-    "https://www.murrayscheese.com/lp/cheese/cave-aged",
-]
+urls = ["https://www.murrayscheese.com/lp/cheese/mozzarella-and-fresh"]
 
 column_names = [
     "name",
@@ -114,7 +97,6 @@ for url in urls:
                 "a",
                 {"class": "ProductCard_textContent__EzFFe", "href": pattern},
             )
-            print(items)
             for item in items:
                 product_url = baseUrl + item["href"]
                 driver.get(product_url)
