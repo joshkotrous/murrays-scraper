@@ -62,7 +62,7 @@ for url in urls:
     driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
 
     driver.get(url)
-    WebDriverWait(driver, 10).until(
+    WebDriverWait(driver, 60).until(
         EC.presence_of_element_located(
             (By.CLASS_NAME, "Pagination_paginationContainer__1AAiV")
         )
@@ -82,7 +82,7 @@ for url in urls:
     while pageElement:
         try:
             driver.get(url)
-            WebDriverWait(driver, 10).until(
+            WebDriverWait(driver, 30).until(
                 EC.presence_of_element_located(
                     (By.CLASS_NAME, "Pagination_paginationContainer__1AAiV")
                 )
@@ -90,10 +90,10 @@ for url in urls:
             pageElement = driver.find_element(
                 By.CSS_SELECTOR, f"a[aria-label='page {index}']"
             )
-            print(pageElement)
+            print("page ", index)
             if index > 1:
                 pageElement.click()
-                WebDriverWait(driver, 10).until(
+                WebDriverWait(driver, 30).until(
                     EC.presence_of_element_located(
                         (By.CLASS_NAME, "Pagination_paginationContainer__1AAiV")
                     )
@@ -106,7 +106,7 @@ for url in urls:
             for item in items:
                 product_url = baseUrl + item["href"]
                 driver.get(product_url)
-                WebDriverWait(driver, 10).until(
+                WebDriverWait(driver, 30).until(
                     EC.presence_of_element_located((By.TAG_NAME, "h1"))
                 )
 
